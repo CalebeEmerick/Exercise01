@@ -10,6 +10,7 @@
 		344EB8872023B1BA006F7BCF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344EB8862023B1BA006F7BCF /* AppDelegate.swift */; };
 		344EB88E2023B1BA006F7BCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 344EB88D2023B1BA006F7BCF /* Assets.xcassets */; };
 		344EB8912023B1BA006F7BCF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 344EB88F2023B1BA006F7BCF /* LaunchScreen.storyboard */; };
+		344EB89A2023B6E3006F7BCF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 344EB8992023B6E3006F7BCF /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -17,7 +18,7 @@
 		344EB8862023B1BA006F7BCF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		344EB88D2023B1BA006F7BCF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		344EB8902023B1BA006F7BCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		344EB8922023B1BA006F7BCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		344EB8992023B6E3006F7BCF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,9 +60,9 @@
 			isa = PBXGroup;
 			children = (
 				344EB8862023B1BA006F7BCF /* AppDelegate.swift */,
-				344EB8922023B1BA006F7BCF /* Info.plist */,
 				344EB88D2023B1BA006F7BCF /* Assets.xcassets */,
 				344EB88F2023B1BA006F7BCF /* LaunchScreen.storyboard */,
+				344EB8992023B6E3006F7BCF /* Info.plist */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -127,6 +128,7 @@
 			files = (
 				344EB8912023B1BA006F7BCF /* LaunchScreen.storyboard in Resources */,
 				344EB88E2023B1BA006F7BCF /* Assets.xcassets in Resources */,
+				344EB89A2023B6E3006F7BCF /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,7 +270,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 578EBFNU9W;
-				INFOPLIST_FILE = Exercise01/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.buy4.UseFlip.iOS.Exercise01;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -283,7 +285,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 578EBFNU9W;
-				INFOPLIST_FILE = Exercise01/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.buy4.UseFlip.iOS.Exercise01;
 				PRODUCT_NAME = "$(TARGET_NAME)";
