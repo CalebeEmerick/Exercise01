@@ -8,9 +8,9 @@
 
 import UIKit
 
-protocol ViewCreatable { }
+protocol ViewCreatable {}
 
-extension ViewCreatable where Self : UIView {
+extension ViewCreatable where Self: UIView {
 	
 	static func makeXib() -> Self {
 		
@@ -25,4 +25,4 @@ extension ViewCreatable where Self : UIView {
 	}
 }
 
-extension UIView : ViewCreatable { }
+extension UIView: ViewCreatable {}

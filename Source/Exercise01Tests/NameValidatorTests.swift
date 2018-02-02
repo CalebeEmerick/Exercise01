@@ -9,7 +9,7 @@
 @testable import Exercise01
 import XCTest
 
-final class NameValidatorTests : XCTestCase {
+final class NameValidatorTests: XCTestCase {
 	
 	private var sut: NameValidator!
 	
@@ -27,46 +27,46 @@ final class NameValidatorTests : XCTestCase {
 	
 	func testLessCharactersThanAllowed() {
 		
-		let name = "asg"
+		let name = "lol"
 		
 		let result = sut.validate(text: name)
 		
-		print()
-		print()
-		print(result.1)
-		print()
-		print()
-		
-		XCTAssertTrue(!result.0)
+		XCTAssertFalse(result, "Menos caracteres que o permitido.")
 	}
 	
 	func testMoreCharactersThanAllowed() {
 		
-		let name = "okdpakdpoasopdkaspodkopaposkd posdapokdpkdpakpdkasdsapodksk"
+		let name = "CalebeNomeGiganteGrandeGrandãoGRANDEMESMO CalebeNomeGiganteGrandeGrandão"
 		
 		let result = sut.validate(text: name)
 		
-		print()
-		print()
-		print(result.1)
-		print()
-		print()
-		
-		XCTAssertTrue(result.0)
+		XCTAssertFalse(result, "Mais caracteres do que o permitido.")
 	}
 	
 	func testNameWithoutLastName() {
 		
-		let name = "asdddd ."
+		let name = "x Nome"
 		
 		let result = sut.validate(text: name)
 		
-		print()
-		print()
-		print(result.1)
-		print()
-		print()
+		XCTAssertFalse(result, "Nome sem sobrenome")
+	}
+	
+	func testLastNameWithoutName() {
 		
-		XCTAssertTrue(result.0)
+		let name = "L Xa"
+		
+		let result = sut.validate(text: name)
+		
+		XCTAssertFalse(result, "Sobrenome sem Nome")
+	}
+	
+	func testNameAndLastNameSuccess() {
+		
+		let name = "Name LastName"
+		
+		let result = sut.validate(text: name)
+		
+		XCTAssertTrue(result)
 	}
 }
