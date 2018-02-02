@@ -10,7 +10,10 @@
 		344EB8872023B1BA006F7BCF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344EB8862023B1BA006F7BCF /* AppDelegate.swift */; };
 		344EB88E2023B1BA006F7BCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 344EB88D2023B1BA006F7BCF /* Assets.xcassets */; };
 		344EB8912023B1BA006F7BCF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 344EB88F2023B1BA006F7BCF /* LaunchScreen.storyboard */; };
-		344EB89A2023B6E3006F7BCF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 344EB8992023B6E3006F7BCF /* Info.plist */; };
+		344EB8A32023BA49006F7BCF /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344EB8A22023BA49006F7BCF /* SignUpController.swift */; };
+		344EB8A72023BC8C006F7BCF /* SignUpControllerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 344EB8A62023BC8C006F7BCF /* SignUpControllerView.xib */; };
+		344EB8A92023BCA0006F7BCF /* SignUpControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344EB8A82023BCA0006F7BCF /* SignUpControllerView.swift */; };
+		344EB8AC2023BD16006F7BCF /* ViewCreatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344EB8AB2023BD16006F7BCF /* ViewCreatable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,10 @@
 		344EB88D2023B1BA006F7BCF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		344EB8902023B1BA006F7BCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		344EB8992023B6E3006F7BCF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
+		344EB8A22023BA49006F7BCF /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
+		344EB8A62023BC8C006F7BCF /* SignUpControllerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpControllerView.xib; sourceTree = "<group>"; };
+		344EB8A82023BCA0006F7BCF /* SignUpControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpControllerView.swift; sourceTree = "<group>"; };
+		344EB8AB2023BD16006F7BCF /* ViewCreatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCreatable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +58,8 @@
 		344EB8852023B1BA006F7BCF /* Exercise01 */ = {
 			isa = PBXGroup;
 			children = (
+				344EB89E2023B800006F7BCF /* SignUp */,
+				344EB8AA2023BD09006F7BCF /* Extension */,
 				344EB8982023B1E9006F7BCF /* Supporting Files */,
 			);
 			path = Exercise01;
@@ -65,6 +74,48 @@
 				344EB8992023B6E3006F7BCF /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		344EB89E2023B800006F7BCF /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				344EB89F2023B83B006F7BCF /* Model */,
+				344EB8A12023B845006F7BCF /* View */,
+				344EB8A02023B842006F7BCF /* Presenter */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		344EB89F2023B83B006F7BCF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		344EB8A02023B842006F7BCF /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		344EB8A12023B845006F7BCF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				344EB8A22023BA49006F7BCF /* SignUpController.swift */,
+				344EB8A62023BC8C006F7BCF /* SignUpControllerView.xib */,
+				344EB8A82023BCA0006F7BCF /* SignUpControllerView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		344EB8AA2023BD09006F7BCF /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				344EB8AB2023BD16006F7BCF /* ViewCreatable.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,7 +179,7 @@
 			files = (
 				344EB8912023B1BA006F7BCF /* LaunchScreen.storyboard in Resources */,
 				344EB88E2023B1BA006F7BCF /* Assets.xcassets in Resources */,
-				344EB89A2023B6E3006F7BCF /* Info.plist in Resources */,
+				344EB8A72023BC8C006F7BCF /* SignUpControllerView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +191,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				344EB8872023B1BA006F7BCF /* AppDelegate.swift in Sources */,
+				344EB8A92023BCA0006F7BCF /* SignUpControllerView.swift in Sources */,
+				344EB8A32023BA49006F7BCF /* SignUpController.swift in Sources */,
+				344EB8AC2023BD16006F7BCF /* ViewCreatable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,7 +259,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -256,7 +310,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -271,11 +325,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 578EBFNU9W;
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.buy4.UseFlip.iOS.Exercise01;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -286,11 +341,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 578EBFNU9W;
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.buy4.UseFlip.iOS.Exercise01;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
