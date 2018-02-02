@@ -25,7 +25,16 @@ final class NameValidatorTests: XCTestCase {
 		sut = nil
 	}
 	
-	func testLessCharactersThanAllowed() {
+	func test_shouldNotAccept_EmptyString() {
+		
+		let name = ""
+		
+		let result = sut.validate(text: name)
+		
+		XCTAssertFalse(result, "O nome está vazio.")
+	}
+	
+	func test_shouldNotAccept_LessCharactersThanAllowed() {
 		
 		let name = "lol"
 		
@@ -34,7 +43,7 @@ final class NameValidatorTests: XCTestCase {
 		XCTAssertFalse(result, "Menos caracteres que o permitido.")
 	}
 	
-	func testMoreCharactersThanAllowed() {
+	func test_shouldNotAccept_MoreCharactersThanAllowed() {
 		
 		let name = "CalebeNomeGiganteGrandeGrandãoGRANDEMESMO CalebeNomeGiganteGrandeGrandão"
 		
@@ -43,7 +52,7 @@ final class NameValidatorTests: XCTestCase {
 		XCTAssertFalse(result, "Mais caracteres do que o permitido.")
 	}
 	
-	func testNameWithoutLastName() {
+	func test_shouldNotAccept_NameWithoutLastName() {
 		
 		let name = "x Nome"
 		
@@ -52,7 +61,7 @@ final class NameValidatorTests: XCTestCase {
 		XCTAssertFalse(result, "Nome sem sobrenome")
 	}
 	
-	func testLastNameWithoutName() {
+	func test_shouldNotAccept_LastNameWithoutName() {
 		
 		let name = "L Xa"
 		
@@ -61,7 +70,7 @@ final class NameValidatorTests: XCTestCase {
 		XCTAssertFalse(result, "Sobrenome sem Nome")
 	}
 	
-	func testNameAndLastNameSuccess() {
+	func test_shouldAccept_NameAndLastName() {
 		
 		let name = "Name LastName"
 		
