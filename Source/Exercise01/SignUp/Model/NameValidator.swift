@@ -12,13 +12,17 @@ final class NameValidator {
 	
 	func validate(text: String) -> Bool {
 		
+		guard !text.isEmpty else {
+			return false
+		}
+		
 		let names = getArrayOfNames(for: text)
 		
 		guard hasNameAndLastName(for: names) else {
 			return false
 		}
 		
-		let fullName = getNameAndLast(for: names)
+		let fullName = getNameAndLastName(for: names)
 		
 		let conditions: [Bool] = [
 			hasLessCharactersThanAllowed(for: text),
