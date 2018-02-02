@@ -12,14 +12,6 @@ final class NameValidator {
 	
 	func validate(text: String) -> Bool {
 		
-		guard hasLessCharactersThanAllowed(for: text) else {
-			return false
-		}
-		
-		guard hasMoreCharactersThanAllowed(for: text) else {
-			return false
-		}
-		
 		let names = getArrayOfNames(for: text)
 		
 		guard hasNameAndLastName(for: names) else {
@@ -28,11 +20,14 @@ final class NameValidator {
 		
 		let fullName = getNameAndLast(for: names)
 		
-		guard hasMinimunCharacter(for: fullName.name) else {
-			return false
-		}
+		let conditions: [Bool] = [
+			hasLessCharactersThanAllowed(for: text),
+			hasMoreCharactersThanAllowed(for: text),
+			hasMinimunCharacter(for: fullName.name),
+			hasMinimunCharacter(for: fullName.lastName)
+		]
 		
-		guard hasMinimunCharacter(for: fullName.lastName) else {
+		guard !conditions.contains(false) else {
 			return false
 		}
 		
