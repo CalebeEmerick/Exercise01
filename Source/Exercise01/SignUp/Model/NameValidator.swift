@@ -50,7 +50,7 @@ final class NameValidator {
 		return names.count == 2
 	}
 	
-	private func getNameAndLast(for names: [String]) -> (name: String, lastName: String) {
+	private func getNameAndLastName(for names: [String]) -> (name: String, lastName: String) {
 		return (name: names[0], lastName: names[1])
 	}
 	
