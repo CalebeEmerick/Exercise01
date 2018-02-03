@@ -20,9 +20,8 @@ final class CPFValidatorTests: XCTestCase {
 	}
 	
 	override func tearDown() {
-		super.tearDown()
-		
 		sut = nil
+		super.tearDown()
 	}
 	
 	func test_shouldNotAccept_EmptyString() {

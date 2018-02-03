@@ -18,6 +18,8 @@
 		344EB8C02023DCA9006F7BCF /* NameValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344EB8BF2023DCA9006F7BCF /* NameValidatorTests.swift */; };
 		347DEB412024ECEF001524F9 /* CPFValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347DEB402024ECEF001524F9 /* CPFValidator.swift */; };
 		347DEB432024FBDA001524F9 /* CPFValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347DEB422024FBDA001524F9 /* CPFValidatorTests.swift */; };
+		347DEB452025A73E001524F9 /* EmailValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347DEB442025A73E001524F9 /* EmailValidator.swift */; };
+		347DEB472025A845001524F9 /* EmailValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347DEB462025A845001524F9 /* EmailValidatorTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		344EB8BF2023DCA9006F7BCF /* NameValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameValidatorTests.swift; sourceTree = "<group>"; };
 		347DEB402024ECEF001524F9 /* CPFValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPFValidator.swift; sourceTree = "<group>"; };
 		347DEB422024FBDA001524F9 /* CPFValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPFValidatorTests.swift; sourceTree = "<group>"; };
+		347DEB442025A73E001524F9 /* EmailValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
+		347DEB462025A845001524F9 /* EmailValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidatorTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +124,7 @@
 			children = (
 				344EB8AF2023DBF9006F7BCF /* NameValidator.swift */,
 				347DEB402024ECEF001524F9 /* CPFValidator.swift */,
+				347DEB442025A73E001524F9 /* EmailValidator.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -154,6 +159,7 @@
 			children = (
 				344EB8BF2023DCA9006F7BCF /* NameValidatorTests.swift */,
 				347DEB422024FBDA001524F9 /* CPFValidatorTests.swift */,
+				347DEB462025A845001524F9 /* EmailValidatorTests.swift */,
 				344EB8B92023DC41006F7BCF /* Info.plist */,
 			);
 			path = Exercise01Tests;
@@ -264,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				344EB8872023B1BA006F7BCF /* AppDelegate.swift in Sources */,
+				347DEB452025A73E001524F9 /* EmailValidator.swift in Sources */,
 				344EB8A92023BCA0006F7BCF /* SignUpControllerView.swift in Sources */,
 				344EB8A32023BA49006F7BCF /* SignUpController.swift in Sources */,
 				344EB8B02023DBF9006F7BCF /* NameValidator.swift in Sources */,
@@ -276,6 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				347DEB472025A845001524F9 /* EmailValidatorTests.swift in Sources */,
 				347DEB432024FBDA001524F9 /* CPFValidatorTests.swift in Sources */,
 				344EB8C02023DCA9006F7BCF /* NameValidatorTests.swift in Sources */,
 			);
