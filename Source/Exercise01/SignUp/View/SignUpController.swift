@@ -10,13 +10,13 @@ import UIKit
 
 // MARK: - Initializer -
 
-final class SignUpController : UIViewController {
+final class SignUpController: UIViewController {
 	
 	private let rootView: SignUpControllerView
 	
 	init(title: String) {
 		rootView = SignUpControllerView.makeXib()
-			
+		
 		super.init(nibName: nil, bundle: nil)
 		
 		self.title = title
@@ -27,6 +27,6 @@ final class SignUpController : UIViewController {
 	}
 	
 	override func loadView() {
-		self.view = rootView
+		view = rootView
 	}
 }

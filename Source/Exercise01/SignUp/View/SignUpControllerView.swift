@@ -10,12 +10,12 @@ import UIKit
 
 // MARK: - Initializer -
 
-final class SignUpControllerView : UIView {
+final class SignUpControllerView: UIView {
 	
-	@IBOutlet private weak var nameField: UITextField!
-	@IBOutlet private weak var emailField: UITextField!
-	@IBOutlet private weak var cpfField: UITextField!
-	@IBOutlet private weak var confirmButton: UIButton!
+	@IBOutlet private var nameField: UITextField!
+	@IBOutlet private var emailField: UITextField!
+	@IBOutlet private var cpfField: UITextField!
+	@IBOutlet private var confirmButton: UIButton!
 	
 	@IBAction private func fieldDidChanged(_ textField: UITextField) {
 		validate(textField: textField)
@@ -76,8 +76,8 @@ extension SignUpControllerView {
 		let doneFrame = CGRect(x: doneX, y: 0, width: doneWidth, height: barFrame.height)
 		let bar = UIView(frame: barFrame)
 		let done = UIButton(frame: doneFrame)
-		let barBackgroundColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1)
-		let doneColor = UIColor(red: 55/255, green: 55/255, blue: 55/255, alpha: 1)
+		let barBackgroundColor = UIColor(red: 245 / 255, green: 245 / 255, blue: 245 / 255, alpha: 1)
+		let doneColor = UIColor(red: 55 / 255, green: 55 / 255, blue: 55 / 255, alpha: 1)
 		done.setTitle("Concluído", for: .normal)
 		done.setTitleColor(doneColor, for: .normal)
 		bar.backgroundColor = barBackgroundColor
@@ -99,7 +99,7 @@ extension SignUpControllerView {
 
 // MARK: - UITextFieldDelegate -
 
-extension SignUpControllerView : UITextFieldDelegate {
+extension SignUpControllerView: UITextFieldDelegate {
 	
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 		
