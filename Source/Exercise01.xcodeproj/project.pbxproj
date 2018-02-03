@@ -16,6 +16,8 @@
 		344EB8AC2023BD16006F7BCF /* ViewCreatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344EB8AB2023BD16006F7BCF /* ViewCreatable.swift */; };
 		344EB8B02023DBF9006F7BCF /* NameValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344EB8AF2023DBF9006F7BCF /* NameValidator.swift */; };
 		344EB8C02023DCA9006F7BCF /* NameValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344EB8BF2023DCA9006F7BCF /* NameValidatorTests.swift */; };
+		347DEB412024ECEF001524F9 /* CPFValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347DEB402024ECEF001524F9 /* CPFValidator.swift */; };
+		347DEB432024FBDA001524F9 /* CPFValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347DEB422024FBDA001524F9 /* CPFValidatorTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,8 @@
 		344EB8B52023DC41006F7BCF /* Exercise01Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Exercise01Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		344EB8B92023DC41006F7BCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		344EB8BF2023DCA9006F7BCF /* NameValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameValidatorTests.swift; sourceTree = "<group>"; };
+		347DEB402024ECEF001524F9 /* CPFValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPFValidator.swift; sourceTree = "<group>"; };
+		347DEB422024FBDA001524F9 /* CPFValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPFValidatorTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				344EB8AF2023DBF9006F7BCF /* NameValidator.swift */,
+				347DEB402024ECEF001524F9 /* CPFValidator.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -148,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				344EB8BF2023DCA9006F7BCF /* NameValidatorTests.swift */,
+				347DEB422024FBDA001524F9 /* CPFValidatorTests.swift */,
 				344EB8B92023DC41006F7BCF /* Info.plist */,
 			);
 			path = Exercise01Tests;
@@ -261,6 +267,7 @@
 				344EB8A92023BCA0006F7BCF /* SignUpControllerView.swift in Sources */,
 				344EB8A32023BA49006F7BCF /* SignUpController.swift in Sources */,
 				344EB8B02023DBF9006F7BCF /* NameValidator.swift in Sources */,
+				347DEB412024ECEF001524F9 /* CPFValidator.swift in Sources */,
 				344EB8AC2023BD16006F7BCF /* ViewCreatable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				347DEB432024FBDA001524F9 /* CPFValidatorTests.swift in Sources */,
 				344EB8C02023DCA9006F7BCF /* NameValidatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
