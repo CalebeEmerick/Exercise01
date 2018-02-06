@@ -83,4 +83,22 @@ final class SignUpPresenterTests: XCTestCase {
 		
 		mock.verifyCpfChanged(for: .invalid)
 	}
+	
+	func test_confirmButtonShouldBeEnabled_WhenAllFieldsAreValid() {
+		
+		presenter.userNameChanged(to: "Name LastName")
+		presenter.userEmailChanged(to: "test@testing.com")
+		presenter.userCPFChanged(to: "144.130.507-62")
+		
+		XCTAssertTrue(mock.isConfirmButtonEnabled)
+	}
+	
+	func test_confirmButtonShouldBeDisabled_WhenAtLeastOneFieldIsInvalid() {
+		
+		presenter.userNameChanged(to: "NameWrong")
+		presenter.userEmailChanged(to: "test@testing.com")
+		presenter.userCPFChanged(to: "144.130.507-62")
+		
+		XCTAssertFalse(mock.isConfirmButtonEnabled)
+	}
 }

@@ -10,8 +10,11 @@ import UIKit
 
 protocol SignUpView : class {
 	
-	func onNameChange(with state: SignUpLineState)
-	func onEmailChange(with state: SignUpLineState)
-	func onCpfChange(with state: SignUpLineState)
+	var isConfirmButtonEnabled: Bool { get }
+	func enableConfirmButton()
+	func disableConfirmButton()
+	func onNameChange(with state: SignUpFieldState)
+	func onEmailChange(with state: SignUpFieldState)
+	func onCpfChange(with state: SignUpFieldState)
 	func onReadyToValidate()
 }

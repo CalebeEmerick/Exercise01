@@ -11,12 +11,13 @@ import XCTest
 
 final class SignUpViewMock {
 	
-	var map: [String: SignUpLineState] = [:]
+	private var map: [String: SignUpFieldState] = [:]
+	private var confirmButtonState = false
 }
 
 extension SignUpViewMock {
 	
-	func verifyNameIsValid(for state: SignUpLineState) {
+	func verifyNameIsValid(for state: SignUpFieldState) {
 		
 		guard let storageState = map["onNameChange"] else {
 			fatalError("O método 'onNameChange' não foi chamado.")
@@ -25,7 +26,7 @@ extension SignUpViewMock {
 		XCTAssertEqual(state, storageState)
 	}
 	
-	func verifyNameIsInvalid(for state: SignUpLineState) {
+	func verifyNameIsInvalid(for state: SignUpFieldState) {
 		
 		guard let storageState = map["onNameChange"] else {
 			fatalError("O método 'onNameChange' não foi chamado.")
@@ -34,7 +35,7 @@ extension SignUpViewMock {
 		XCTAssertEqual(state, storageState)
 	}
 	
-	func verifyEmailChange(for state: SignUpLineState) {
+	func verifyEmailChange(for state: SignUpFieldState) {
 		
 		guard let storageState = map["onEmailChange"] else {
 			fatalError("O método 'onEmailChange' não foi chamado.")
@@ -43,7 +44,7 @@ extension SignUpViewMock {
 		XCTAssertEqual(state, storageState)
 	}
 	
-	func verifyCpfChanged(for state: SignUpLineState) {
+	func verifyCpfChanged(for state: SignUpFieldState) {
 		
 		guard let storageState = map["onCpfChange"] else {
 			fatalError("O método 'onCpfChange' não foi chamado.")
@@ -55,15 +56,27 @@ extension SignUpViewMock {
 
 extension SignUpViewMock: SignUpView {
 	
-	func onNameChange(with state: SignUpLineState) {
+	var isConfirmButtonEnabled: Bool {
+		return confirmButtonState
+	}
+	
+	func enableConfirmButton() {
+		confirmButtonState = true
+	}
+	
+	func disableConfirmButton() {
+		confirmButtonState = false
+	}
+	
+	func onNameChange(with state: SignUpFieldState) {
 		map["onNameChange"] = state
 	}
 	
-	func onEmailChange(with state: SignUpLineState) {
+	func onEmailChange(with state: SignUpFieldState) {
 		map["onEmailChange"] = state
 	}
 	
-	func onCpfChange(with state: SignUpLineState) {
+	func onCpfChange(with state: SignUpFieldState) {
 		map["onCpfChange"] = state
 	}
 	

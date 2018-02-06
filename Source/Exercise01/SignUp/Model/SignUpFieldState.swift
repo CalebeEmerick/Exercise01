@@ -1,5 +1,5 @@
 //
-//  SignUpLineState.swift
+//  SignUpFieldState.swift
 //  Exercise01
 //
 //  Created by Calebe Emerick on 04/02/2018.
@@ -8,12 +8,21 @@
 
 import UIKit
 
-enum SignUpLineState {
+enum SignUpFieldState {
 
 	case `default`
 	case valid
 	case invalid
 
+	init(isValid: Bool) {
+		if isValid {
+			self = .valid
+		}
+		else {
+			self = .invalid
+		}
+	}
+	
 	var color: CGColor {
 		switch self {
 		case .default:

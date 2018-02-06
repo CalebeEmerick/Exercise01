@@ -24,7 +24,7 @@
 		347DEB4B202601AA001524F9 /* SignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347DEB4A202601AA001524F9 /* SignUpPresenter.swift */; };
 		347DEB4D20260537001524F9 /* SignUpPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347DEB4C20260537001524F9 /* SignUpPresenterTests.swift */; };
 		347DEB5020276C01001524F9 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347DEB4F20276C01001524F9 /* Color.swift */; };
-		347DEB5220276CAF001524F9 /* SignUpLineState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347DEB5120276CAF001524F9 /* SignUpLineState.swift */; };
+		347DEB5220276CAF001524F9 /* SignUpFieldState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347DEB5120276CAF001524F9 /* SignUpFieldState.swift */; };
 		349A86572029176300567ECA /* SignUpViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349A86562029176300567ECA /* SignUpViewMock.swift */; };
 /* End PBXBuildFile section */
 
@@ -60,7 +60,7 @@
 		347DEB4A202601AA001524F9 /* SignUpPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPresenter.swift; sourceTree = "<group>"; };
 		347DEB4C20260537001524F9 /* SignUpPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPresenterTests.swift; sourceTree = "<group>"; };
 		347DEB4F20276C01001524F9 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
-		347DEB5120276CAF001524F9 /* SignUpLineState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpLineState.swift; sourceTree = "<group>"; };
+		347DEB5120276CAF001524F9 /* SignUpFieldState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpFieldState.swift; sourceTree = "<group>"; };
 		349A86562029176300567ECA /* SignUpViewMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -138,7 +138,7 @@
 				344EB8AF2023DBF9006F7BCF /* NameValidator.swift */,
 				347DEB402024ECEF001524F9 /* CPFValidator.swift */,
 				347DEB442025A73E001524F9 /* EmailValidator.swift */,
-				347DEB5120276CAF001524F9 /* SignUpLineState.swift */,
+				347DEB5120276CAF001524F9 /* SignUpFieldState.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -310,7 +310,7 @@
 				344EB8A92023BCA0006F7BCF /* SignUpControllerView.swift in Sources */,
 				344EB8A32023BA49006F7BCF /* SignUpController.swift in Sources */,
 				347DEB49202600F5001524F9 /* SignUpView.swift in Sources */,
-				347DEB5220276CAF001524F9 /* SignUpLineState.swift in Sources */,
+				347DEB5220276CAF001524F9 /* SignUpFieldState.swift in Sources */,
 				344EB8B02023DBF9006F7BCF /* NameValidator.swift in Sources */,
 				347DEB412024ECEF001524F9 /* CPFValidator.swift in Sources */,
 				344EB8AC2023BD16006F7BCF /* ViewCreatable.swift in Sources */,

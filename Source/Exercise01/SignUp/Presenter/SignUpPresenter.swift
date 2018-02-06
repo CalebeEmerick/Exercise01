@@ -15,6 +15,10 @@ final class SignUpPresenter {
 	private let emailValidator: EmailValidator
 	private let cpfValidator: CPFValidator
 	
+	private var nameState: SignUpFieldState = .default
+	private var emailState: SignUpFieldState = .default
+	private var cpfState: SignUpFieldState = .default
+	
 	init(view: SignUpView, nameValidator: NameValidator, emailValidator: EmailValidator, cpfValidator: CPFValidator) {
 		self.view = view
 		self.nameValidator = nameValidator
@@ -22,34 +26,53 @@ final class SignUpPresenter {
 		self.cpfValidator = cpfValidator
 	}
 	
+	var isAllFieldsValid: Bool {
+		return nameState == .valid && emailState == .valid && cpfState == .valid
+	}
+	
 	func userNameChanged(to name: String) {
-		if nameValidator.validate(text: name) {
-			view.onNameChange(with: .valid)
-		}
-		else {
-			view.onNameChange(with: .invalid)
-		}
+		let isNameValid = nameValidator.validate(text: name)
+		nameState = SignUpFieldState(isValid: isNameValid)
+		view.onNameChange(with: nameState)
+		shouldEnableConfirmButton()
 	}
 	
 	func userEmailChanged(to email: String) {
-		if emailValidator.validate(email: email) {
-			view.onEmailChange(with: .valid)
-		}
-		else {
-			view.onEmailChange(with: .invalid)
-		}
+		let isEmailValid = emailValidator.validate(email: email)
+		emailState = SignUpFieldState(isValid: isEmailValid)
+		view.onEmailChange(with: emailState)
+		shouldEnableConfirmButton()
 	}
 	
 	func userCPFChanged(to cpf: String) {
-		if cpfValidator.validate(cpf: cpf) {
-			view.onCpfChange(with: .valid)
-		}
-		else {
-			view.onCpfChange(with: .invalid)
-		}
+		let isCpfValid = cpfValidator.validate(cpf: cpf)
+		cpfState = SignUpFieldState(isValid: isCpfValid)
+		view.onCpfChange(with: cpfState)
+		shouldEnableConfirmButton()
 	}
 	
 	func performValidation() {
 		
+	}
+	
+	private func shouldEnableConfirmButton() {
+		if isAllFieldsValid {
+			enableConfirmButton()
+		}
+		else {
+			disableConfirmButton()
+		}
+	}
+	
+	private func enableConfirmButton() {
+		if !view.isConfirmButtonEnabled {
+			view.enableConfirmButton()
+		}
+	}
+	
+	private func disableConfirmButton() {
+		if view.isConfirmButtonEnabled {
+			view.disableConfirmButton()
+		}
 	}
 }

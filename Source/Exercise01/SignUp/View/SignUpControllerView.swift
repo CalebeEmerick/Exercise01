@@ -107,7 +107,7 @@ extension SignUpControllerView {
 		let line = CALayer()
 		let y = frame.origin.y + frame.height
 		line.frame = CGRect(x: frame.origin.x, y: y, width: frame.width, height: 1)
-		line.backgroundColor = SignUpLineState.default.color
+		line.backgroundColor = SignUpFieldState.default.color
 		layer.addSublayer(line)
 		return line
 	}
@@ -133,15 +133,27 @@ extension SignUpControllerView: UITextFieldDelegate {
 
 extension SignUpControllerView: SignUpView {
 	
-	func onNameChange(with state: SignUpLineState) {
+	var isConfirmButtonEnabled: Bool {
+		return confirmButton.isEnabled
+	}
+	
+	func enableConfirmButton() {
+		confirmButton.isEnabled = true
+	}
+	
+	func disableConfirmButton() {
+		confirmButton.isEnabled = false
+	}
+	
+	func onNameChange(with state: SignUpFieldState) {
 		nameLine.backgroundColor = state.color
 	}
 	
-	func onEmailChange(with state: SignUpLineState) {
+	func onEmailChange(with state: SignUpFieldState) {
 		emailLine.backgroundColor = state.color
 	}
 	
-	func onCpfChange(with state: SignUpLineState) {
+	func onCpfChange(with state: SignUpFieldState) {
 		cpfLine.backgroundColor = state.color
 	}
 	
