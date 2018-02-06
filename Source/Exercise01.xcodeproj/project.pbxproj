@@ -25,6 +25,7 @@
 		347DEB4D20260537001524F9 /* SignUpPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347DEB4C20260537001524F9 /* SignUpPresenterTests.swift */; };
 		347DEB5020276C01001524F9 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347DEB4F20276C01001524F9 /* Color.swift */; };
 		347DEB5220276CAF001524F9 /* SignUpLineState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347DEB5120276CAF001524F9 /* SignUpLineState.swift */; };
+		349A86572029176300567ECA /* SignUpViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349A86562029176300567ECA /* SignUpViewMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		347DEB4C20260537001524F9 /* SignUpPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPresenterTests.swift; sourceTree = "<group>"; };
 		347DEB4F20276C01001524F9 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		347DEB5120276CAF001524F9 /* SignUpLineState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpLineState.swift; sourceTree = "<group>"; };
+		349A86562029176300567ECA /* SignUpViewMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,13 +173,22 @@
 		344EB8B62023DC41006F7BCF /* Exercise01Tests */ = {
 			isa = PBXGroup;
 			children = (
-				347DEB4C20260537001524F9 /* SignUpPresenterTests.swift */,
+				3469F7312028F5A600AB3959 /* PresenterTest */,
 				344EB8BF2023DCA9006F7BCF /* NameValidatorTests.swift */,
 				347DEB422024FBDA001524F9 /* CPFValidatorTests.swift */,
 				347DEB462025A845001524F9 /* EmailValidatorTests.swift */,
 				344EB8B92023DC41006F7BCF /* Info.plist */,
 			);
 			path = Exercise01Tests;
+			sourceTree = "<group>";
+		};
+		3469F7312028F5A600AB3959 /* PresenterTest */ = {
+			isa = PBXGroup;
+			children = (
+				349A86562029176300567ECA /* SignUpViewMock.swift */,
+				347DEB4C20260537001524F9 /* SignUpPresenterTests.swift */,
+			);
+			path = PresenterTest;
 			sourceTree = "<group>";
 		};
 		347DEB4E20276BEC001524F9 /* Shared */ = {
@@ -314,6 +325,7 @@
 				347DEB432024FBDA001524F9 /* CPFValidatorTests.swift in Sources */,
 				347DEB4D20260537001524F9 /* SignUpPresenterTests.swift in Sources */,
 				344EB8C02023DCA9006F7BCF /* NameValidatorTests.swift in Sources */,
+				349A86572029176300567ECA /* SignUpViewMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

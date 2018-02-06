@@ -107,7 +107,7 @@ extension SignUpControllerView {
 		let line = CALayer()
 		let y = frame.origin.y + frame.height
 		line.frame = CGRect(x: frame.origin.x, y: y, width: frame.width, height: 1)
-		line.backgroundColor = SignUpLineState.default.color.cgColor
+		line.backgroundColor = SignUpLineState.default.color
 		layer.addSublayer(line)
 		return line
 	}
@@ -133,28 +133,16 @@ extension SignUpControllerView: UITextFieldDelegate {
 
 extension SignUpControllerView: SignUpView {
 	
-	func onNameValidTint(line color: CGColor) {
-		nameLine.backgroundColor = color
+	func onNameChange(with state: SignUpLineState) {
+		nameLine.backgroundColor = state.color
 	}
 	
-	func onEmailValidTint(line color: CGColor) {
-		emailLine.backgroundColor = color
+	func onEmailChange(with state: SignUpLineState) {
+		emailLine.backgroundColor = state.color
 	}
 	
-	func onCpfValidTint(line color: CGColor) {
-		cpfLine.backgroundColor = color
-	}
-	
-	func onNameInvalidTint(line color: CGColor) {
-		nameLine.backgroundColor = color
-	}
-	
-	func onEmailInvalidTint(line color: CGColor) {
-		emailLine.backgroundColor = color
-	}
-	
-	func onCpfInvalidTint(line color: CGColor) {
-		cpfLine.backgroundColor = color
+	func onCpfChange(with state: SignUpLineState) {
+		cpfLine.backgroundColor = state.color
 	}
 	
 	func onReadyToValidate() {

@@ -10,13 +10,8 @@ import UIKit
 
 protocol SignUpView : class {
 	
-	func onNameValidTint(line color: CGColor)
-	func onEmailValidTint(line color: CGColor)
-	func onCpfValidTint(line color: CGColor)
-	
-	func onNameInvalidTint(line color: CGColor)
-	func onEmailInvalidTint(line color: CGColor)
-	func onCpfInvalidTint(line color: CGColor)
-	
+	func onNameChange(with state: SignUpLineState)
+	func onEmailChange(with state: SignUpLineState)
+	func onCpfChange(with state: SignUpLineState)
 	func onReadyToValidate()
 }

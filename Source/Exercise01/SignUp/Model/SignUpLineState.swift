@@ -14,14 +14,14 @@ enum SignUpLineState {
 	case valid
 	case invalid
 
-	var color: UIColor {
+	var color: CGColor {
 		switch self {
 		case .default:
-			return Color(hexString: "#ccc").color
+			return Color(hexString: "#ccc").cgColor
 		case .valid:
-			return Color(hexString: "#6cb94a").color
+			return Color(hexString: "#6cb94a").cgColor
 		case .invalid:
-			return Color(hexString: "#ee6a64").color
+			return Color(hexString: "#ee6a64").cgColor
 		}
 	}
 }

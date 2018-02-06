@@ -24,19 +24,29 @@ final class SignUpPresenter {
 	
 	func userNameChanged(to name: String) {
 		if nameValidator.validate(text: name) {
-			view.onNameValidTint(line: SignUpLineState.valid.color.cgColor)
+			view.onNameChange(with: .valid)
 		}
 		else {
-			view.onNameInvalidTint(line: SignUpLineState.invalid.color.cgColor)
+			view.onNameChange(with: .invalid)
 		}
 	}
 	
 	func userEmailChanged(to email: String) {
-		
+		if emailValidator.validate(email: email) {
+			view.onEmailChange(with: .valid)
+		}
+		else {
+			view.onEmailChange(with: .invalid)
+		}
 	}
 	
 	func userCPFChanged(to cpf: String) {
-		
+		if cpfValidator.validate(cpf: cpf) {
+			view.onCpfChange(with: .valid)
+		}
+		else {
+			view.onCpfChange(with: .invalid)
+		}
 	}
 	
 	func performValidation() {
