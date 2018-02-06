@@ -12,7 +12,7 @@ import UIKit
 
 final class SignUpController: UIViewController {
 	
-	private let rootView: SignUpControllerView
+	let rootView: SignUpControllerView
 	
 	init(title: String) {
 		rootView = SignUpControllerView.makeXib()

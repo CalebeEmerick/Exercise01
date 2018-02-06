@@ -20,6 +20,10 @@ final class SignUpControllerView: UIView {
 	@IBAction private func fieldDidChanged(_ textField: UITextField) {
 		validate(textField: textField)
 	}
+	
+	private(set) var nameLine: CALayer!
+	private(set) var emailLine: CALayer!
+	private(set) var cpfLine: CALayer!
 }
 
 // MARK: - Life Cycle -
@@ -31,6 +35,7 @@ extension SignUpControllerView {
 		
 		setFieldsDelegate()
 		setBarAboveCpfField()
+		setFieldsLine()
 	}
 }
 
@@ -42,6 +47,12 @@ extension SignUpControllerView {
 		nameField.delegate = self
 		emailField.delegate = self
 		cpfField.delegate = self
+	}
+	
+	private func setFieldsLine() {
+		nameLine = makeBottomLine(with: nameField.frame)
+		emailLine = makeBottomLine(with: emailField.frame)
+		cpfLine = makeBottomLine(with: cpfField.frame)
 	}
 	
 	private func validate(textField: UITextField) {
@@ -92,6 +103,15 @@ extension SignUpControllerView {
 		}
 	}
 	
+	private func makeBottomLine(with frame: CGRect) -> CALayer {
+		let line = CALayer()
+		let y = frame.origin.y + frame.height
+		line.frame = CGRect(x: frame.origin.x, y: y, width: frame.width, height: 1)
+		line.backgroundColor = SignUpFieldState.default.color
+		layer.addSublayer(line)
+		return line
+	}
+	
 	@objc private func dismissCpfFieldKeyboard() {
 		dismissKeyboard(for: cpfField)
 	}
@@ -106,5 +126,38 @@ extension SignUpControllerView: UITextFieldDelegate {
 		changeFieldFocus(from: textField)
 		
 		return true
+	}
+}
+
+// MARK: - SignUpView -
+
+extension SignUpControllerView: SignUpView {
+	
+	var isConfirmButtonEnabled: Bool {
+		return confirmButton.isEnabled
+	}
+	
+	func enableConfirmButton() {
+		confirmButton.isEnabled = true
+	}
+	
+	func disableConfirmButton() {
+		confirmButton.isEnabled = false
+	}
+	
+	func onNameChange(with state: SignUpFieldState) {
+		nameLine.backgroundColor = state.color
+	}
+	
+	func onEmailChange(with state: SignUpFieldState) {
+		emailLine.backgroundColor = state.color
+	}
+	
+	func onCpfChange(with state: SignUpFieldState) {
+		cpfLine.backgroundColor = state.color
+	}
+	
+	func onReadyToValidate() {
+		
 	}
 }
