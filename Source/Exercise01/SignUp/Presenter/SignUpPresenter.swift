@@ -52,7 +52,12 @@ final class SignUpPresenter {
 	}
 	
 	func performValidation() {
-		
+		view.onReadyToValidate()
+	}
+	
+	func resetViewState() {
+		view.clearAllFields()
+		view.disableConfirmButton()
 	}
 	
 	private func shouldEnableConfirmButton() {
