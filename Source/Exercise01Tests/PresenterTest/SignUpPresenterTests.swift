@@ -101,4 +101,34 @@ final class SignUpPresenterTests: XCTestCase {
 		
 		XCTAssertFalse(mock.isConfirmButtonEnabled)
 	}
+	
+	func test_shouldShowAlertWhen_ConfirmButtonIsTapped() {
+		
+		presenter.performValidation()
+		
+		mock.verifyAlertDoneButtonIsTapped()
+	}
+	
+	func test_shouldClearAllFieldsWhen_AlertDoneButtonIsTapped() {
+		
+		presenter.resetViewState()
+		
+		mock.verifyAllFieldsIsEmpty()
+	}
+	
+	func test_shouldDisableConfirmButtonWhen_AlertDoneButtonIsTapped() {
+		
+		presenter.resetViewState()
+		
+		mock.verifyConfirmButtonIsDisabled()
+	}
+	
+	func test_shouldAllFieldsLineHaveTheDefaultColorWhen_AlertDoneButtonIsTapped() {
+		
+		presenter.resetViewState()
+		
+		let defaultColor = SignUpFieldState.default.color
+			
+		mock.verifyAllFieldsHave(color: defaultColor)
+	}
 }

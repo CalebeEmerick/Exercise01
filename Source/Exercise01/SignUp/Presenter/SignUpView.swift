@@ -18,4 +18,5 @@ protocol SignUpView : class {
 	func onCpfChange(with state: SignUpFieldState)
 	func clearAllFields()
 	func onReadyToValidate()
+	func setFieldsLine(to color: CGColor)
 }
