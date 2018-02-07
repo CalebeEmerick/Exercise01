@@ -24,6 +24,9 @@ final class SignUpControllerView: UIView {
 	private(set) var nameLine: CALayer!
 	private(set) var emailLine: CALayer!
 	private(set) var cpfLine: CALayer!
+	
+	var presenter: SignUpPresenter!
+	weak var controller: SignUpController?
 }
 
 // MARK: - Life Cycle -
@@ -35,6 +38,12 @@ extension SignUpControllerView {
 		
 		setFieldsDelegate()
 		setBarAboveCpfField()
+		
+	}
+	
+	override func draw(_ rect: CGRect) {
+		super.draw(rect)
+		
 		setFieldsLine()
 	}
 }
@@ -56,14 +65,15 @@ extension SignUpControllerView {
 	}
 	
 	private func validate(textField: UITextField) {
+		let text = textField.text ?? ""
 		if textField == nameField {
-			
+			presenter.userNameChanged(to: text)
 		}
 		else if textField == emailField {
-			
+			presenter.userEmailChanged(to: text)
 		}
 		else {
-			
+			presenter.userCPFChanged(to: text)
 		}
 	}
 	
@@ -158,6 +168,19 @@ extension SignUpControllerView: SignUpView {
 	}
 	
 	func onReadyToValidate() {
-		
+		let alertController = UIAlertController(title: "Parabéns", message: "Seus dados estão validados!", preferredStyle: .alert)
+		let action = UIAlertAction(title: "Concluir", style: .default) { [weak self] _ in
+			self?.presenter.resetViewState()
+		}
+		alertController.addAction(action)
+		DispatchQueue.main.async {
+			self.controller?.present(alertController, animated: true)
+		}
+	}
+	
+	func clearAllFields() {
+		nameField.text = ""
+		emailField.text = ""
+		cpfField.text = ""
 	}
 }

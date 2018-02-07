@@ -16,5 +16,6 @@ protocol SignUpView : class {
 	func onNameChange(with state: SignUpFieldState)
 	func onEmailChange(with state: SignUpFieldState)
 	func onCpfChange(with state: SignUpFieldState)
+	func clearAllFields()
 	func onReadyToValidate()
 }
