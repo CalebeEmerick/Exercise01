@@ -62,27 +62,25 @@ final class CPFValidator {
 	private func islogicallyValid(cpf: String) -> Bool {
 		let numbers = getCpfNumbers(cpf: cpf)
 		guard numbers.count == 11 else { return false }
-		let firstBlock = 11 - (numbers[0] * 10 +
-			numbers[1] * 9 +
-			numbers[2] * 8 +
-			numbers[3] * 7 +
-			numbers[4] * 6 +
-			numbers[5] * 5 +
-			numbers[6] * 4 +
-			numbers[7] * 3 +
-			numbers[8] * 2) % 11
+		
+		let firstBlock = getSum(for: numbers, maxPosition: 8, maxMultiplier: 10)
+		let secondBlock = getSum(for: numbers, maxPosition: 9, maxMultiplier: 11)
 		let dv1 = firstBlock > 9 ? 0 : firstBlock
-		let secondBlock = 11 - (numbers[0] * 11 +
-			numbers[1] * 10 +
-			numbers[2] * 9 +
-			numbers[3] * 8 +
-			numbers[4] * 7 +
-			numbers[5] * 6 +
-			numbers[6] * 5 +
-			numbers[7] * 4 +
-			numbers[8] * 3 +
-			numbers[9] * 2) % 11
 		let dv2 = secondBlock > 9 ? 0 : secondBlock
+		
 		return dv1 == numbers[9] && dv2 == numbers[10]
+	}
+	
+	private func getSum(for numbers: [Int], maxPosition: Int, maxMultiplier: Int) -> Int {
+		var multiplier = maxMultiplier
+		var result = 0
+		
+		for index in 0 ... maxPosition {
+			let partialResult = numbers[index] * multiplier
+			result += partialResult
+			multiplier -= 1
+		}
+		
+		return 11 - result % 11
 	}
 }
