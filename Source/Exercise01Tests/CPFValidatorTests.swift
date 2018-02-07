@@ -69,6 +69,15 @@ final class CPFValidatorTests: XCTestCase {
 		XCTAssertFalse(result)
 	}
 	
+	func test_shouldAccept_ValidCPF() {
+		
+		let cpf = "14413050762"
+		
+		let result = sut.validate(cpf: cpf)
+		
+		XCTAssertTrue(result)
+	}
+	
 	func test_shouldAccept_FormattedCPF() {
 		
 		let cpf = "144.130.507-62"
