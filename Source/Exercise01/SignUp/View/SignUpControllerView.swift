@@ -17,6 +17,10 @@ final class SignUpControllerView: UIView {
 	@IBOutlet private var cpfField: UITextField!
 	@IBOutlet private var confirmButton: UIButton!
 	
+	@IBAction private func didTapConfirmButton() {
+		presenter.performValidation()
+	}
+	
 	@IBAction private func fieldDidChanged(_ textField: UITextField) {
 		validate(textField: textField)
 	}
@@ -182,5 +186,11 @@ extension SignUpControllerView: SignUpView {
 		nameField.text = ""
 		emailField.text = ""
 		cpfField.text = ""
+	}
+	
+	func setFieldsLine(to color: CGColor) {
+		nameLine.backgroundColor = color
+		emailLine.backgroundColor = color
+		cpfLine.backgroundColor = color
 	}
 }

@@ -13,6 +13,14 @@ final class SignUpViewMock {
 	
 	private var map: [String: SignUpFieldState] = [:]
 	private var confirmButtonState = false
+	private var nameField = "Name LastName"
+	private var emailField = "test@testing.com"
+	private var cpfField = "14413050762"
+	private var confirmButtonEnabled = true
+	private var isAlertDoneButtonPressed = false
+	private var nameLineColor = SignUpFieldState.valid.color
+	private var emailLineColor = SignUpFieldState.valid.color
+	private var cpfLineColor = SignUpFieldState.valid.color
 }
 
 extension SignUpViewMock {
@@ -52,6 +60,32 @@ extension SignUpViewMock {
 		
 		XCTAssertEqual(state, storageState)
 	}
+	
+	func verifyAllFieldsIsEmpty() {
+		
+		let isEmpty = nameField.isEmpty && emailField.isEmpty && cpfField.isEmpty
+		
+		XCTAssertTrue(isEmpty)
+	}
+	
+	func verifyConfirmButtonIsDisabled() {
+		
+		XCTAssertFalse(confirmButtonEnabled)
+	}
+	
+	func verifyAlertDoneButtonIsTapped() {
+		
+		XCTAssertTrue(isAlertDoneButtonPressed)
+	}
+	
+	func verifyAllFieldsHave(color: CGColor) {
+		
+		let condition = nameLineColor == color &&
+			emailLineColor == color &&
+			cpfLineColor == color
+		
+		XCTAssertTrue(condition)
+	}
 }
 
 extension SignUpViewMock: SignUpView {
@@ -66,6 +100,7 @@ extension SignUpViewMock: SignUpView {
 	
 	func disableConfirmButton() {
 		confirmButtonState = false
+		confirmButtonEnabled = false
 	}
 	
 	func onNameChange(with state: SignUpFieldState) {
@@ -81,6 +116,18 @@ extension SignUpViewMock: SignUpView {
 	}
 	
 	func onReadyToValidate() {
-		
+		isAlertDoneButtonPressed = true
+	}
+	
+	func clearAllFields() {
+		nameField = ""
+		emailField = ""
+		cpfField = ""
+	}
+	
+	func setFieldsLine(to color: CGColor) {
+		nameLineColor = color
+		emailLineColor = color
+		cpfLineColor = color
 	}
 }

@@ -48,6 +48,9 @@
                     <state key="disabled">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
+                    <connections>
+                        <action selector="didTapConfirmButton" destination="iN0-l3-epB" eventType="touchUpInside" id="tlo-I4-8K5"/>
+                    </connections>
                 </button>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="j6q-0a-sOf">
                     <rect key="frame" x="20" y="105" width="280" height="35"/>

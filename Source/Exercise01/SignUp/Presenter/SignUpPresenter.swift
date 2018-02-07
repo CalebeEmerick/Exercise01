@@ -58,6 +58,7 @@ final class SignUpPresenter {
 	func resetViewState() {
 		view.clearAllFields()
 		view.disableConfirmButton()
+		view.setFieldsLine(to: SignUpFieldState.default.color)
 	}
 	
 	private func shouldEnableConfirmButton() {
